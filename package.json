@@ -18,5 +18,11 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^1.4.15"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.24",
+    "mongoskin": "^2.1.0"
   }
 }
