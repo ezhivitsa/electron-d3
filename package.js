@@ -95,21 +95,21 @@ function startPack() {
     });
 }
 
-function pack(plat, arch, cb) {
+function pack (plat, arch, cb) {
   // there is no darwin ia32 electron
-  if (plat === 'darwin' && arch === 'ia32') return;
+  if (plat === 'darwin' && arch === 'ia32') return
 
   const iconObj = {
     icon: DEFAULT_OPTS.icon + (() => {
-      let extension = '.png';
+      let extension = '.png'
       if (plat === 'darwin') {
-        extension = '.icns';
+        extension = '.icns'
       } else if (plat === 'win32') {
-        extension = '.ico';
+        extension = '.ico'
       }
-      return extension;
+      return extension
     })()
-  };
+  }
 
   const opts = Object.assign({}, DEFAULT_OPTS, iconObj, {
     platform: plat,
@@ -117,15 +117,15 @@ function pack(plat, arch, cb) {
     prune: true,
     'app-version': pkg.version || DEFAULT_OPTS.version,
     out: `release/${plat}-${arch}`
-  });
+  })
 
-  packager(opts, cb);
+  packager(opts, cb)
 }
 
 
-function log(plat, arch) {
+function log (plat, arch) {
   return (err, filepath) => {
-    if (err) return console.error(err);
-    console.log(`${plat}-${arch} finished!`);
-  };
+    if (err) return console.error(err)
+    console.log(`${plat}-${arch} finished!`)
+  }
 }
