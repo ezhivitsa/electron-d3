@@ -4,6 +4,8 @@ let menu
 let template
 let mainWindow = null
 
+app.setName('Stability radius')
+
 crashReporter.start()
 
 if (process.env.NODE_ENV === 'development') {
@@ -52,35 +54,6 @@ app.on('ready', () => {
         }
       }]
     }, {
-      label: 'Edit',
-      submenu: [{
-        label: 'Undo',
-        accelerator: 'Command+Z',
-        selector: 'undo:'
-      }, {
-        label: 'Redo',
-        accelerator: 'Shift+Command+Z',
-        selector: 'redo:'
-      }, {
-        type: 'separator'
-      }, {
-        label: 'Cut',
-        accelerator: 'Command+X',
-        selector: 'cut:'
-      }, {
-        label: 'Copy',
-        accelerator: 'Command+C',
-        selector: 'copy:'
-      }, {
-        label: 'Paste',
-        accelerator: 'Command+V',
-        selector: 'paste:'
-      }, {
-        label: 'Select All',
-        accelerator: 'Command+A',
-        selector: 'selectAll:'
-      }]
-    }, {
       label: 'View',
       submenu: (process.env.NODE_ENV === 'development') ? [{
         label: 'Reload',
@@ -100,29 +73,7 @@ app.on('ready', () => {
         click () {
           mainWindow.toggleDevTools()
         }
-      }] : [{
-        label: 'Toggle Full Screen',
-        accelerator: 'Ctrl+Command+F',
-        click () {
-          mainWindow.setFullScreen(!mainWindow.isFullScreen())
-        }
-      }]
-    }, {
-      label: 'Window',
-      submenu: [{
-        label: 'Minimize',
-        accelerator: 'Command+M',
-        selector: 'performMiniaturize:'
-      }, {
-        label: 'Close',
-        accelerator: 'Command+W',
-        selector: 'performClose:'
-      }, {
-        type: 'separator'
-      }, {
-        label: 'Bring All to Front',
-        selector: 'arrangeInFront:'
-      }]
+      }] : []
     }]
 
     menu = Menu.buildFromTemplate(template)
@@ -160,13 +111,7 @@ app.on('ready', () => {
         click () {
           mainWindow.toggleDevTools()
         }
-      }] : [{
-        label: 'Toggle &Full Screen',
-        accelerator: 'F11',
-        click () {
-          mainWindow.setFullScreen(!mainWindow.isFullScreen())
-        }
-      }]
+      }] : []
     }]
     menu = Menu.buildFromTemplate(template)
     mainWindow.setMenu(menu)
