@@ -1,7 +1,5 @@
 const _ = require('lodash')
 
-const constants = require('app.constants')
-
 /**
  * Works as find, but calculates pages count and total count if page was specified
  *
@@ -17,7 +15,7 @@ function find (model, query, options) {
   let projection = query.projection
   let mQuery = projection ? model.find(query, projection) : model.find(query)
 
-  _.defaults(options, { limit: constants.PAGINATION.DEFAULT_LIMIT, page: 0, noLimit: false })
+  _.defaults(options, { limit: 30, page: 0, noLimit: false })
   if (options.noLimit) {
     hasPaging = false
     options.limit = 0

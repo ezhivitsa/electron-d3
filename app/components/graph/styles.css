@@ -1,0 +1,102 @@
+.goBack {
+  color: #1d1daf;
+}
+
+.goBack:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+svg {
+  border: 5px solid #aaa;
+}
+text {
+  font-family: 'Gudea', sans-serif;
+  font-size: 12pt;
+  fill: #E41414;
+  font-weight: bold;
+}
+circle.node {
+  fill: lightsteelblue;
+  stroke: #555;
+  stroke-width: 2px;
+}
+circle.leaf {
+  stroke: #fff;
+  stroke-width: 6px;
+  cursor: pointer;
+}
+circle.link-expanded {
+  stroke: #555;
+  stroke-width: 2px;
+  stroke-dasharray: 2px 4px;
+}
+circle.helper {
+  stroke-width: 0;
+  fill: #333;
+  opacity: 0.6;
+}
+circle.center-of-mass {
+  fill: white;
+  stroke: red;
+  stroke-width: 5px;
+}
+path.hlink {
+  stroke: #333;
+  stroke-opacity: 0.5;
+  fill: none;
+  cursor: pointer;
+}
+
+path.hlink.selected {
+  stroke : hsl(180, 100%, 50%);
+}
+
+path.trace-alpha {
+  stroke: #0ee;
+  stroke-opacity: 0.8;
+  stroke-width: 1.5px;
+  fill: none;
+  pointer-events: none;
+}
+path.trace-c2 {
+  stroke: #3bb;
+  stroke-opacity: 0.8;
+  stroke-width: 1.5px;
+  fill: none;
+  pointer-events: none;
+}
+line.link {
+  stroke: red;
+  stroke-opacity: 0.7;
+  pointer-events: none;
+}
+
+.lineGraph text {
+  font-size: 14px;
+  fill: #1D1DAF;
+  font-weight: bold;
+}
+
+.lineGraph g path,
+.lineGraph g line {
+  fill: none;
+  stroke: #1D1DAF;
+  stroke-width: 2;
+  shape-rendering: crispEdges;
+}
+
+.lineGraph g line {
+  opacity: 0.7;
+  stroke: #929090;
+  stroke-linecap: square;
+  stroke-dasharray: 1, 5;
+}
+
+.actions li {
+  color: #0033ca;
+}
+
+.actions li:hover {
+  font-weight: bold;
+}

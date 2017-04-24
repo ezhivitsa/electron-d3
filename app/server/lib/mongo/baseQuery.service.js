@@ -64,10 +64,9 @@ class BaseQueryService extends EventEmitter {
     return this._collection.aggregateAsync(query)
   }
 
-  findByIds (tenantId, ids) {
+  findByIds (ids) {
     if (ids.length) {
       let clientsQuery = {
-        TenantId: tenantId,
         _id: { $in: ids }
       }
       return this.find(clientsQuery, { noLimit: true })
@@ -78,10 +77,9 @@ class BaseQueryService extends EventEmitter {
     }
   }
 
-  findById (tenantId, id) {
+  findById (id) {
     let caseQuery = {
-      _id: id,
-      TenantId: tenantId
+      _id: id
     }
     return this.findOne(caseQuery)
   }
